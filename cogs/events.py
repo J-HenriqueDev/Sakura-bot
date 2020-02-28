@@ -82,6 +82,10 @@ class events(commands.Cog):
           ctx.args = None
           ctx.author = message.author
       await self.bot.invoke(ctx)
+    
+      if message.channel.id == 683090019472244738:
+        await message.add_reaction('👍')
+        return await message.add_reaction('👎')
 
 
 
