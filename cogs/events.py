@@ -84,7 +84,7 @@ class events(commands.Cog):
       await self.bot.invoke(ctx)
     
       if message.channel.id == 683090019472244738:
-        await message.add_reaction('👍')
+        await message.add_reaction(':white_check_mark:')
         return await message.add_reaction('👎')
 
 
