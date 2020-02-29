@@ -142,10 +142,11 @@ class comandos(commands.Cog):
         reaction, user = await self.bot.wait_for('reaction_add', check=check, timeout=120.0)
 
         if reaction.emoji == '🔁':
+            Hugh = choice(hug_img)
             embed = self.bot.embed(ctx)
             embed.title = "Abraço"
             embed.description = f"**{ctx.author.name}** Ele(a) recebeu um abraço de **{ctx.author.name}**! Que fofos!"
-            embed.set_image(url=hug)
+            embed.set_image(url=Hugh)
             ret = await ctx.send(embed=embed)
 
             await ret.add_reaction("🔁")
