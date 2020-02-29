@@ -90,12 +90,14 @@ class events(commands.Cog):
       if message.channel.id == 667533980194570240:
             
          if "level5" in message.content:
-         gett = message.mentions[0].id
+            
+            gett = message.mentions[0].id
          #print(gett)
-         rola = message.guild.get_role(667601584758456320)
-         await message.guild.get_member(gett).add_roles(rola)
+            rola = message.guild.get_role(667601584758456320)
+            await message.guild.get_member(gett).add_roles(rola)
          #print('ok chefe')
        elif "level10" in message.content:
+        
          gett = message.mentions[0].id
          #print(gett)
          rola = message.guild.get_role(667601644632014868)
