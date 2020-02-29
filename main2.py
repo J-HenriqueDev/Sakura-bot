@@ -43,7 +43,6 @@ class main(discord.ext.commands.Bot):
         color = self.neutral if invisible else self.cor
         emb = discord.Embed(color=color)
         emb.set_footer(text=self.user.name + " © 2020", icon_url=self.user.avatar_url_as())
-        await ctx.message.delete()
         emb.timestamp = ctx.message.created_at
         return emb
 
