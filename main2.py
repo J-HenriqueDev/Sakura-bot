@@ -42,7 +42,8 @@ class main(discord.ext.commands.Bot):
     def embed(self, ctx, invisible=False):
         color = self.neutral if invisible else self.cor
         emb = discord.Embed(color=color)
-        emb.set_footer(text=f'Executado por {ctx.author.name}', icon_url=ctx.author.avatar_url)
+        emb.set_footer(text=self.user.name + " © 2020", icon_url=self.user.avatar_url_as())
+        await ctx.message.delete()
         emb.timestamp = ctx.message.created_at
         return emb
 
