@@ -82,33 +82,31 @@ class events(commands.Cog):
           ctx.args = None
           ctx.author = message.author
       await self.bot.invoke(ctx)
-    
+
       if message.channel.id == 683090019472244738:
         await message.add_reaction('✔️')
         return await message.add_reaction('❌')
-    
+
       if message.channel.id == 667533980194570240:
-            
-         if "level5" in message.content:
-            
-            gett = message.mentions[0].id
-         #print(gett)
-            rola = message.guild.get_role(667601584758456320)
-            await message.guild.get_member(gett).add_roles(rola)
-         #print('ok chefe')
-       elif "level10" in message.content:
-        
-         gett = message.mentions[0].id
-         #print(gett)
-         rola = message.guild.get_role(667601644632014868)
-         await message.guild.get_member(gett).add_roles(rola)
-         #print('ok chefe')
-       elif "level20" in message.content:
-         gett = message.mentions[0].id
-         #print(gett)
-         rola = message.guild.get_role(667601688202444801)
-         await message.guild.get_member(gett).add_roles(rola)
+        if "level5" in message.content:
+          gett = message.mentions[0].id
+          #print(gett)
+          rola = message.guild.get_role(667601584758456320)
+          await message.guild.get_member(gett).add_roles(rola)
           #print('ok chefe')
+        elif "level10" in message.content:
+          gett = message.mentions[0].id
+          #print(gett)
+          rola = message.guild.get_role(667601644632014868)
+          await message.guild.get_member(gett).add_roles(rola)
+          #print('ok chefe')
+        elif "level20" in message.content:
+          gett = message.mentions[0].id
+          #print(gett)
+          rola = message.guild.get_role(667601688202444801)
+          await message.guild.get_member(gett).add_roles(rola)
+          #print('ok chefe')
+       
 
 
 
@@ -136,6 +134,7 @@ class events(commands.Cog):
             aviso1.remove(message.author.id)     
             aviso2.remove(message.author.id)       
             print('ban')
+            await message.author.send("pow pra que divulgar mano?\n\n~~não responda essa mensagem~~")
             await message.author.ban(reason="Divulgando.")
 
     @commands.Cog.listener()
