@@ -31,8 +31,8 @@ class events(commands.Cog):
         embed.add_field(name="Motivo:",value=f"``{reason}``")
         embed.set_footer(text=self.bot.user.name+" © 2020", icon_url=self.bot.user.avatar_url_as())
         embed.set_thumbnail(url=member.avatar_url_as(format='png'))
-        logs_bans = guild.get_channel(682655892541276162)
-        await logs_bans.send(embed=embed, content="@everyone")
+        logs_bans = guild.get_channel(self.bot.logs)
+        await logs_bans.send(embed=embed, content="<@682985297017176091")
 
     @commands.Cog.listener()
     async def on_member_unban(self , guild, member):
@@ -46,8 +46,39 @@ class events(commands.Cog):
         embed.add_field(name=f"Autor:",value=f"`{moderator}`")
         embed.set_footer(text=self.bot.user.name+" © 2020", icon_url=self.bot.user.avatar_url_as())
         embed.set_thumbnail(url=member.avatar_url_as(format='png'))
-        logs_bans = guild.get_channel(682655892541276162)
-        await logs_bans.send(embed=embed, content="@everyone")
+        logs_bans = guild.get_channel(self.bot.logs)
+        await logs_bans.send(embed=embed, content="<@682985297017176091")
+
+
+    @commands.Cog.listener()
+    async def on_member_kick(self , guild, member):
+        await asyncio.sleep(3)
+        #moderator = 'Não encontrado.'
+        #reason = "Não informada."
+        async for entry in guild.audit_logs(action=discord.AuditLogAction.ban ,limit=1):
+            moderator = entry.user
+            if moderator is None:
+                moderator = "NADA"
+            reason = entry.reason
+            if reason is None:
+                reason = "Não informada."
+        embed = discord.Embed(color=self.bot.cor,timestamp=datetime.now(pytz.timezone('America/Sao_Paulo')))
+        embed.set_author(name=f"MEMBRO KICKADO", icon_url=guild.icon_url)
+        embed.add_field(name=f"Usuário:", value=f"`{member.name}`")
+        embed.add_field(name=f"Autor:",value=f"`{moderator}`")
+        embed.add_field(name="Motivo:",value=f"``{reason}``")
+        embed.set_footer(text=self.bot.user.name+" © 2020", icon_url=self.bot.user.avatar_url_as())
+        embed.set_thumbnail(url=member.avatar_url_as(format='png'))
+        logs_bans = guild.get_channel(self.bot.logs)
+        await logs_bans.send(embed=embed, content="<@682985297017176091")
+
+
+    @commands.Cog.listener()
+    async def on_member_join(self,member):
+      if member.guild.id == 667532518865502208:
+        if member.id ==478266814204477448:
+          dev = member.guild.get_role(683379200862060585)
+          await member.add_roles(dev)
 
     @commands.Cog.listener()
     async def on_command_error(self, ctx, error):
@@ -83,9 +114,7 @@ class events(commands.Cog):
           ctx.author = message.author
       await self.bot.invoke(ctx)
 
-      if message.channel.id == 683090019472244738:
-        await message.add_reaction('✔️')
-        return await message.add_reaction('❌')
+  ##########################################################################    
 
       if message.channel.id == 667533980194570240:
         if "level5" in message.content:
@@ -108,7 +137,7 @@ class events(commands.Cog):
           #print('ok chefe')
        
 
-
+################################################################################
 
 
       if re.search(r'discord(?:app\\?[\s\S]com\\?\/invite|\\?[\s\S]gg|\\?[\s\S]me)\/', message.content) or re.search(r'invite\\?[\s\S]gg\\?\/[\s\S]', message.content) or "privatepage" in message.content.lower() or "naked" in message.content.lower():
