@@ -114,7 +114,11 @@ class events(commands.Cog):
           ctx.author = message.author
       await self.bot.invoke(ctx)
 
-  ##########################################################################    
+  ##########################################################################   
+      
+       if message.channel.id == 683090019472244738:
+          await message.add_reaction('✔️')
+          return await message.add_reaction('❌')
 
       if message.channel.id == 667533980194570240:
         if "level5" in message.content:
