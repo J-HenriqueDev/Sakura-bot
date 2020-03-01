@@ -116,7 +116,7 @@ class events(commands.Cog):
 
   ##########################################################################   
       
-       if message.channel.id == 683090019472244738:
+      if message.channel.id == 683090019472244738:
           await message.add_reaction('✔️')
           return await message.add_reaction('❌')
 
