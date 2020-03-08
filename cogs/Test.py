@@ -10,7 +10,7 @@ import requests
 
 
 
-class bemvindo(commands.Cog)
+class bemvindo(commands.Cog):
     def __init__(self,bot):
         self.bot = bot
 
