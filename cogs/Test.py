@@ -21,9 +21,9 @@ class bemvindo(commands.Cog)
        if member.guild.id == self.bot.guild and not member.bot:
         cat = member.created_at.replace(tzinfo=pytz.utc).astimezone(tz=pytz.timezone('America/Sao_Paulo')).strftime('`%d/%m/%Y`')
         dias = (datetime.utcnow() - member.created_at).days
-        embed = discord.Embed(color=0x7289DA, description=f'**{member.mention}(`{member.id}`) entrou no servidor, com a conta criada em {cat}({dias} dias).**')
+        embed = discord.Embed(color=self.bot.cor, description=f'**{member.mention}(`{member.id}`) entrou no servidor, com a conta criada em {cat}({dias} dias).**')
         embed.set_thumbnail(url=member.avatar_url)
-        embed.set_footer(text=self.bot.user.name+" © 2019", icon_url=self.bot.user.avatar_url_as())
+        embed.set_footer(text=self.bot.user.name+" © 2020", icon_url=self.bot.user.avatar_url_as())
         await self.bot.get_channel(580095031591829518).send(embed=embed)
         
         ###################################################################
