@@ -10,7 +10,7 @@ import requests
 
 
 
-class bem-vindo(commands.Cog)
+class bemvindo(commands.Cog)
     def __init__(self,bot):
         self.bot = bot
 
@@ -55,4 +55,5 @@ class bem-vindo(commands.Cog)
         canal = discord.utils.get(member.guild.channels, id=581544881206329354)
         await canal.send(f"Olá {member.mention}, seja bem vindo ao **New Dev's**, caso queria algum **CARGO** use o <#581216249170624512> para pegar, e leia as <#581081932935200769> para ficar por dentro do servidor.", file=discord.File('cogs/img/welcome.png'))
       
-def setup(cog)
+def setup(bot):
+    bot.add_cog(bemvindo(bot))
