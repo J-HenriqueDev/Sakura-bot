@@ -32,7 +32,7 @@ class events(commands.Cog):
         embed.set_footer(text=self.bot.user.name+" © 2020", icon_url=self.bot.user.avatar_url_as())
         embed.set_thumbnail(url=member.avatar_url_as(format='png'))
         logs_bans = guild.get_channel(self.bot.bans)
-        await logs_bans.send(embed=embed, content="<@682985297017176091")
+        await logs_bans.send(embed=embed, content="<@&686245671769997544>")
 
     @commands.Cog.listener()
     async def on_member_unban(self , guild, member):
@@ -47,7 +47,7 @@ class events(commands.Cog):
         embed.set_footer(text=self.bot.user.name+" © 2020", icon_url=self.bot.user.avatar_url_as())
         embed.set_thumbnail(url=member.avatar_url_as(format='png'))
         logs_bans = guild.get_channel(self.bot.bans)
-        await logs_bans.send(embed=embed, content="<@682985297017176091")
+        await logs_bans.send(embed=embed, content="<@&686245671769997544>")
 
 
     @commands.Cog.listener()
@@ -119,7 +119,7 @@ class events(commands.Cog):
 
 
       if re.search(r'discord(?:app\\?[\s\S]com\\?\/invite|\\?[\s\S]gg|\\?[\s\S]me)\/', message.content) or re.search(r'invite\\?[\s\S]gg\\?\/[\s\S]', message.content) or "privatepage" in message.content.lower() or "naked" in message.content.lower():
-        if str("</Link>") in [r.name for r in message.author.roles if r.name != "@everyone"] or 8 in message.author.permissions_in(ctx.channel):
+        if str("</Link>") in [r.name for r in message.author.roles if r.name != "@everyone"] or '👑</Owner>' in message.author.roles:
             print("OK")
         else:
           if not message.author.id in aviso1:
