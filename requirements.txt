@@ -2,3 +2,4 @@ discord.py
 pytz
 Pillow
 requests
+captcha
