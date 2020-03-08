@@ -18,7 +18,7 @@ class bemvindo(commands.Cog)
 
     @commands.Cog.listener()  
     async def on_member_join(self, member):
-       if member.guild.id == 570906068277002271 and not member.bot:
+       if member.guild.id == self.bot.guild and not member.bot:
         cat = member.created_at.replace(tzinfo=pytz.utc).astimezone(tz=pytz.timezone('America/Sao_Paulo')).strftime('`%d/%m/%Y`')
         dias = (datetime.utcnow() - member.created_at).days
         embed = discord.Embed(color=0x7289DA, description=f'**{member.mention}(`{member.id}`) entrou no servidor, com a conta criada em {cat}({dias} dias).**')
@@ -53,7 +53,7 @@ class bemvindo(commands.Cog)
         fundo.paste(saida, (43, 91), saida)
         fundo.save("cogs/img/welcome.png")   
         canal = discord.utils.get(member.guild.channels, id=581544881206329354)
-        await canal.send(f"Olá {member.mention}, seja bem vindo ao **New Dev's**, caso queria algum **CARGO** use o <#581216249170624512> para pegar, e leia as <#581081932935200769> para ficar por dentro do servidor.", file=discord.File('cogs/img/welcome.png'))
+        await canal.send(f"Olá {member.mention}, seja bem vindo a **NeoStore**, leia as <#581081932935200769> para ficar por dentro do servidor.", file=discord.File('cogs/img/welcome.png'))
       
 def setup(bot):
     bot.add_cog(bemvindo(bot))
