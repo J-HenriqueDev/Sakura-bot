@@ -119,7 +119,7 @@ class events(commands.Cog):
 
 
       if re.search(r'discord(?:app\\?[\s\S]com\\?\/invite|\\?[\s\S]gg|\\?[\s\S]me)\/', message.content) or re.search(r'invite\\?[\s\S]gg\\?\/[\s\S]', message.content) or "privatepage" in message.content.lower() or "naked" in message.content.lower():
-        if str("</Link>") in [r.name for r in message.author.roles if r.name != "@everyone"] or '👑</Owner>' in message.author.roles:
+        if str("</Link>") in [r.name for r in message.author.roles if r.name != "@everyone"] or message.guild.get_role(679025998523531265) in message.author.roles:
             print("OK")
         else:
           if not message.author.id in aviso1:
