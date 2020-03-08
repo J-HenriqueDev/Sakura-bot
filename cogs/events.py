@@ -119,20 +119,20 @@ class events(commands.Cog):
 
 
       if re.search(r'discord(?:app\\?[\s\S]com\\?\/invite|\\?[\s\S]gg|\\?[\s\S]me)\/', message.content) or re.search(r'invite\\?[\s\S]gg\\?\/[\s\S]', message.content) or "privatepage" in message.content.lower() or "naked" in message.content.lower():
-        if str("</Link>") in [r.name for r in message.author.roles if r.name != "@everyone"] or message.guild.get_role(679025998523531265) in message.author.roles:
+        if str("</Link>") in [r.name for r in message.author.roles if r.name != "@everyone"] or str('👑</Owner>') in [r.name for r in message.author.roles if r.name != "@everyone"]:
             print("OK")
         else:
           if not message.author.id in aviso1:
             aviso1.append(message.author.id)
             await message.delete()
-            embed=discord.Embed(description=f"  **|** Olá {message.author.mention}, não é permitido **CONVITES** de outros servidores sem a permissão dos **Adminstradores** segundo as regras.\nTendo isso em mente irei avisa-lo esse é seu **1° Strike**.\nNo **3° Strike** você será banido.", color=self.bot.cor)
+            embed=discord.Embed(description=f"  **|** Olá {message.author.mention}, não é permitido **CONVITES** de outros servidores sem a permissão dos **ADMINISTRADORES** segundo as regras.\nTendo isso em mente irei avisa-lo esse é seu **1° Strike**.\nNo **3° Strike** você será banido.", color=self.bot.cor)
             msg = await message.channel.send(embed=embed)
             await asyncio.sleep(10)
             await msg.delete()
           elif not message.author.id in aviso2:
             aviso2.append(message.author.id)
             await message.delete()
-            embed=discord.Embed(description=f"  **|** Olá {message.author.mention}, não é permitido **CONVITES** de outros servidores sem a permissão dos **Adminstradores** segundo as regras.\nTendo isso em mente irei avisa-lo esse é seu **2° Strike**.\nNo **3° Strike** você será banido.", color=self.bot.cor)
+            embed=discord.Embed(description=f"  **|** Olá {message.author.mention}, não é permitido **CONVITES** de outros servidores sem a permissão dos **ADMINISTRADORES** segundo as regras.\nTendo isso em mente irei avisa-lo esse é seu **2° Strike**.\nNo **3° Strike** você será banido.", color=self.bot.cor)
             msg = await message.channel.send(embed=embed)
             await asyncio.sleep(10)
             await msg.delete()
@@ -147,7 +147,7 @@ class events(commands.Cog):
     @commands.Cog.listener()
     async def on_message_delete(self,message):
         if message.author.bot == False:
-          if message.channel.id == 674820932103045121:
+          if message.channel.id == 679737085195845637:
             return
           else:
             embed = discord.Embed(color=self.bot.cor)
