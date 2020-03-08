@@ -31,7 +31,7 @@ class events(commands.Cog):
         embed.add_field(name="Motivo:",value=f"``{reason}``")
         embed.set_footer(text=self.bot.user.name+" © 2020", icon_url=self.bot.user.avatar_url_as())
         embed.set_thumbnail(url=member.avatar_url_as(format='png'))
-        logs_bans = guild.get_channel(self.bot.logs)
+        logs_bans = guild.get_channel(self.bot.bans)
         await logs_bans.send(embed=embed, content="<@682985297017176091")
 
     @commands.Cog.listener()
@@ -46,7 +46,7 @@ class events(commands.Cog):
         embed.add_field(name=f"Autor:",value=f"`{moderator}`")
         embed.set_footer(text=self.bot.user.name+" © 2020", icon_url=self.bot.user.avatar_url_as())
         embed.set_thumbnail(url=member.avatar_url_as(format='png'))
-        logs_bans = guild.get_channel(self.bot.logs)
+        logs_bans = guild.get_channel(self.bot.bans)
         await logs_bans.send(embed=embed, content="<@682985297017176091")
 
 
@@ -55,7 +55,7 @@ class events(commands.Cog):
         await asyncio.sleep(3)
         #moderator = 'Não encontrado.'
         #reason = "Não informada."
-        async for entry in guild.audit_logs(action=discord.AuditLogAction.ban ,limit=1):
+        async for entry in guild.audit_logs(action=discord.AuditLogAction.kick ,limit=1):
             moderator = entry.user
             if moderator is None:
                 moderator = "NADA"
@@ -69,16 +69,10 @@ class events(commands.Cog):
         embed.add_field(name="Motivo:",value=f"``{reason}``")
         embed.set_footer(text=self.bot.user.name+" © 2020", icon_url=self.bot.user.avatar_url_as())
         embed.set_thumbnail(url=member.avatar_url_as(format='png'))
-        logs_bans = guild.get_channel(self.bot.logs)
+        logs_bans = guild.get_channel(self.bot.bans)
         await logs_bans.send(embed=embed, content="<@682985297017176091")
 
 
-    @commands.Cog.listener()
-    async def on_member_join(self,member):
-      if member.guild.id == 667532518865502208:
-        if member.id ==478266814204477448:
-          dev = member.guild.get_role(683379200862060585)
-          await member.add_roles(dev)
 
     @commands.Cog.listener()
     async def on_command_error(self, ctx, error):
@@ -120,26 +114,6 @@ class events(commands.Cog):
           await message.add_reaction('✔️')
           return await message.add_reaction('❌')
 
-      if message.channel.id == 667533980194570240:
-        if "level5" in message.content:
-          gett = message.mentions[0].id
-          #print(gett)
-          rola = message.guild.get_role(667601584758456320)
-          await message.guild.get_member(gett).add_roles(rola)
-          #print('ok chefe')
-        elif "level10" in message.content:
-          gett = message.mentions[0].id
-          #print(gett)
-          rola = message.guild.get_role(667601644632014868)
-          await message.guild.get_member(gett).add_roles(rola)
-          #print('ok chefe')
-        elif "level20" in message.content:
-          gett = message.mentions[0].id
-          #print(gett)
-          rola = message.guild.get_role(667601688202444801)
-          await message.guild.get_member(gett).add_roles(rola)
-          #print('ok chefe')
-       
 
 ################################################################################
 
