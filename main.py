@@ -17,6 +17,7 @@ class main(discord.ext.commands.Bot):
         
         self.dono = secrets.DONO
         self.logs = 686175562150051942
+        self.bans = 679738999312744454
         self.guild = 679015306437460008
         self.token = 'blz,talvez outro dia.'
         
