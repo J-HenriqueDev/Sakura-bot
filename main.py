@@ -13,11 +13,11 @@ class main(discord.ext.commands.Bot):
         super().__init__(command_prefix=commands.when_mentioned_or(secrets.PREFIXO),
                          case_insensitive=True,
                          pm_help=None,
-                         description="um bot feito por Neo_ para o Servidor da TiaSakura")
+                         description="um bot feito por Neo_ para a minha lojinha")
         
         self.dono = secrets.DONO
-        self.logs = 682655892541276162
-        self.guild = 667532518865502208
+        self.logs = 686175562150051942
+        self.guild = 679015306437460008
         self.token = 'blz,talvez outro dia.'
         
         self.cor = 0xf10cdb
