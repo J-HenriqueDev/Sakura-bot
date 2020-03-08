@@ -95,6 +95,12 @@ class events(commands.Cog):
           await ctx.send('faltando argumentos')
 
     @commands.Cog.listener()
+    async def on_member_join(self,member):
+      if member.guild.id == 679015306437460008:
+         dev = member.guild.get_role(679026175762235403)
+         await member.add_roles(dev)
+
+    @commands.Cog.listener()
     async def on_message(self, message):
       if message.author.bot:
         return
