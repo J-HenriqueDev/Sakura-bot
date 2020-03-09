@@ -48,7 +48,7 @@ class bemvindo(commands.Cog):
         escrever = ImageDraw.Draw(fundo)
         escrever.text(xy=(365,160), text=str(member.name),fill=(0,0,0),font=fonte)
         escrever.text(xy=(380,220), text=str(member.discriminator),fill=(0,0,0),font=fonte2)
-        escrever.text(xy=(365,305), text="New Dev's",fill=(0,0,0),font=fonte)
+        escrever.text(xy=(365,305), text="NeoStore",fill=(0,0,0),font=fonte)
 
         fundo.paste(saida, (43, 91), saida)
         fundo.save("cogs/img/welcome.png")   
