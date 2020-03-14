@@ -24,7 +24,7 @@ class bemvindo(commands.Cog):
         embed = discord.Embed(color=self.bot.cor, description=f'**{member.mention}(`{member.id}`) entrou no servidor, com a conta criada em {cat}({dias} dias).**')
         embed.set_thumbnail(url=member.avatar_url)
         embed.set_footer(text=self.bot.user.name+" © 2020", icon_url=self.bot.user.avatar_url_as())
-        await self.bot.get_channel(685174932686110739).send(embed=embed)
+        #await self.bot.get_channel(685174932686110739).send(embed=embed)
         
         ###################################################################
         
