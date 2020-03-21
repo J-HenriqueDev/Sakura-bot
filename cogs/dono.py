@@ -1,5 +1,6 @@
 from discord.ext import commands
 import asyncio
+from contextlib import redirect_stdout
 import inspect
 import discord
 import json
