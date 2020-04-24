@@ -19,6 +19,17 @@ class bemvindo(commands.Cog):
     @commands.Cog.listener()  
     async def on_member_join(self, member):
        if member.guild.id == 679015306437460008 and not member.bot:
+        canal = discord.utils.get(member.guild.channels, id=685161699929489419)
+        membros = len(member.guild.members)
+        texto = "<:neostore:685906375708377342> | **Membros** : "+str(membros).replace("0", "0⃣").replace("1", "1⃣").replace("2", "2⃣").replace("3", "3⃣").replace("4", "4⃣").replace("5", "5⃣").replace("6", "6⃣").replace("7", "7⃣").replace("8", "8⃣").replace("9", "9⃣")
+        txt = f"{member} entrou no servidor."
+        await canal.edit(topic=texto, reason=txt)
+
+
+
+        #########################################
+
+
         cat = member.created_at.replace(tzinfo=pytz.utc).astimezone(tz=pytz.timezone('America/Sao_Paulo')).strftime('`%d/%m/%Y`')
         dias = (datetime.utcnow() - member.created_at).days
         embed = discord.Embed(color=self.bot.cor, description=f'**{member.mention}(`{member.id}`) entrou no servidor, com a conta criada em {cat}({dias} dias).**')
@@ -66,6 +77,6 @@ class bemvindo(commands.Cog):
         txt = f"{member} saiu do servidor."
         await canal.edit(topic=texto, reason=txt)
 
-
+   
 def setup(bot):
     bot.add_cog(bemvindo(bot))
