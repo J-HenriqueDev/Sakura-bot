@@ -54,6 +54,17 @@ class bemvindo(commands.Cog):
         fundo.save("cogs/img/welcome.png")   
         canal = discord.utils.get(member.guild.channels, id=679737248199344146)
         await canal.send(f"Olá {member.mention}, seja bem vindo a **NeoStore**, leia as <#679026023886487552> para ficar por dentro do servidor.", file=discord.File('cogs/img/welcome.png'))
-      
+ 
+
+
+    @commands.Cog.listener()  
+    async def on_member_remove(self, member):
+       if member.guild.id == 679015306437460008:
+        canal = discord.utils.get(member.guild.channels, id=570908352000032798)
+        membros = len(member.guild.members)
+        texto = "<:neostore:685906375708377342> | **Membros** : "+str(membros).replace("0", "0⃣").replace("1", "1⃣").replace("2", "2⃣").replace("3", "3⃣").replace("4", "4⃣").replace("5", "5⃣").replace("6", "6⃣").replace("7", "7⃣").replace("8", "8⃣").replace("9", "9⃣")
+        await canal.edit(topic=texto, reason=f"{member} saiu do servidor.")
+
+
 def setup(bot):
     bot.add_cog(bemvindo(bot))
