@@ -84,6 +84,6 @@ async def blacklist(ctx):
 
 if __name__ == '__main__':
     try:
-        bot.run(secrets.TOKEN)
+        bot.run("NjgyMjgwMjAwNjk5OTA0MDkx.Xlas9A.qYjW_Zo-C8HQXP6v7maeBgH1w10")
     except KeyboardInterrupt: 
         pass
