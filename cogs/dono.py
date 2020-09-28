@@ -19,7 +19,7 @@ class Owner(commands.Cog):
     async def debug(self, ctx, *, args=None):
         if not ctx.author.id in self.bot.dono:
             await ctx.send(
-                f"<:incorrect:679730690333736962>{ctx.author.mention} você não é um administrador para utilizar esse comando.",
+                f"<:unlike:760197986592096256> {ctx.author.mention} você não é um **administrador** para utilizar esse comando.",
                 delete_after=15)
             return
         if args is None:
@@ -57,7 +57,7 @@ class Owner(commands.Cog):
     async def reload(self, ctx, *, cog: str = None):
         if not ctx.author.id in self.bot.dono:
             await ctx.send(
-                f"<:errado:567782857863593995>{ctx.author.mention} você não é um administrador para utilizar esse comando.",
+                f"<:unlike:760197986592096256> {ctx.author.mention} você não é um **administrador** para utilizar esse comando.",
                 delete_after=15)
             return
         if cog is None:
@@ -86,13 +86,13 @@ class Owner(commands.Cog):
     async def reiniciar(self,ctx):
         if not ctx.author.id in self.bot.dono:
             await ctx.send(
-                f"<:errado:567782857863593995>{ctx.author.mention} você não é um administrador para utilizar esse comando.",
+                f"<:unlike:760197986592096256> {ctx.author.mention} você não é um **administrador** para utilizar esse comando.",
                 delete_after=15)
             return
         import os
         import sys
         await ctx.message.delete()
-        embed = discord.Embed(description=f"<:correto:567782857678913547> O **{ctx.me.name}** está sendo reiniciado!", color=0x7289DA)
+        embed = discord.Embed(description=f"<:like:760197986609004584> O **{ctx.me.name}** está sendo reiniciado!", color=0x7289DA)
         await ctx.send(embed=embed)
         print(f"REINICIAR USADO POR : {ctx.author}")
         def reiniciar_code():
@@ -111,7 +111,7 @@ class Owner(commands.Cog):
     async def _desativarcomando(self, ctx, *, nome=None):
         if not ctx.author.id in self.bot.dono:
             await ctx.send(
-                f"<:errado:567782857863593995>{ctx.author.mention} você não é um administrador para utilizar esse comando.",
+                f"<:unlike:760197986592096256> {ctx.author.mention} você não é um **administrador** para utilizar esse comando.",
                 delete_after=15)
             return
         if nome is None:
@@ -123,17 +123,17 @@ class Owner(commands.Cog):
 
         if comando.enabled:
             comando.enabled = False
-            await ctx.send(f"<:desligado:571038275314122754> **{ctx.author.name}**, você desativou o comando **`{comando.name}`**.")
+            await ctx.send(f"<:unlike:760197986592096256>**{ctx.author.name}**, você desativou o comando **`{comando.name}`**.")
         else:
             comando.enabled = True
-            await ctx.send(f"<:ligado:571038226861522957> **{ctx.author.name}**, você ativou o comando **`{comando.name}`**.")
+            await ctx.send(f"<:like:760197986609004584> **{ctx.author.name}**, você ativou o comando **`{comando.name}`**.")
 
 
     @commands.command(hidden=True)
     async def exec(self, ctx, *, body: str):
         if not ctx.author.id in self.bot.dono:
             await ctx.send(
-                f"<:errado:567782857863593995>{ctx.author.mention} você não é um administrador para utilizar esse comando.",
+                f"<:unlike:760197986592096256> {ctx.author.mention} você não é um **administrador** para utilizar esse comando.",
                 delete_after=15)
             return
         def clean(content):
@@ -202,7 +202,7 @@ class Owner(commands.Cog):
     async def botunban(self, ctx, member):
         if not ctx.author.id in self.bot.dono:
             return await ctx.send(
-                f"<:errado:567782857863593995>{ctx.author.mention} você não é um desenvolvedor para utilizar esse comando.",
+                f"<:unlike:760197986592096256> {ctx.author.mention} você não é um desenvolvedor para utilizar esse comando.",
                 delete_after=15)
         with open("cogs/utils/users_banned.json") as f:
             jsn = json.load(f)

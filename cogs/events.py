@@ -32,7 +32,7 @@ class events(commands.Cog):
         embed.set_footer(text=self.bot.user.name+" © 2020", icon_url=self.bot.user.avatar_url_as())
         embed.set_thumbnail(url=member.avatar_url_as(format='png'))
         logs_bans = guild.get_channel(self.bot.bans)
-        await logs_bans.send(embed=embed, content="<@&686245671769997544>")
+        await logs_bans.send(embed=embed, content="<@&759814438323879987>")
 
     @commands.Cog.listener()
     async def on_member_unban(self , guild, member):
@@ -47,7 +47,7 @@ class events(commands.Cog):
         embed.set_footer(text=self.bot.user.name+" © 2020", icon_url=self.bot.user.avatar_url_as())
         embed.set_thumbnail(url=member.avatar_url_as(format='png'))
         logs_bans = guild.get_channel(self.bot.bans)
-        await logs_bans.send(embed=embed, content="<@&686245671769997544>")
+        await logs_bans.send(embed=embed, content="<@&759814438323879987>")
 
 
     @commands.Cog.listener()
@@ -70,7 +70,7 @@ class events(commands.Cog):
         embed.set_footer(text=self.bot.user.name+" © 2020", icon_url=self.bot.user.avatar_url_as())
         embed.set_thumbnail(url=member.avatar_url_as(format='png'))
         logs_bans = guild.get_channel(self.bot.bans)
-        await logs_bans.send(embed=embed, content="<@682985297017176091")
+        await logs_bans.send(embed=embed, content="<@759814438323879987")
 
 
 
@@ -81,7 +81,7 @@ class events(commands.Cog):
           quantidade = len(comma)
           if quantidade > 13:
             return await ctx.send('não tente me bugar poha')
-          embed = discord.Embed(title=f" | Comando não encontrado", color=self.bot.cor, description=f"O comando `{comma}` não existe.")
+          embed = discord.Embed(title=f"<:unlike:760197986592096256> | Comando não encontrado", color=self.bot.cor, description=f"O comando `{comma}` não existe.")
           await ctx.send(embed=embed)
         elif isinstance(error, commands.errors.CheckFailure):
           print("erro ao checar")
@@ -90,14 +90,14 @@ class events(commands.Cog):
           m, s = divmod(error.retry_after, 60)
           return await ctx.send(f"**{ctx.author.name}**, aguarde **`{int(s)}`** segundo(s) para poder usar o comando **`{ctx.invoked_with}`** novamente.", delete_after=45)
         elif isinstance(error, commands.DisabledCommand):
-          await ctx.send(f"  | **{ctx.author.name}**, o comando **`{ctx.invoked_with}`** está temporariamente desativado.")
+          await ctx.send(f" <:unlike:760197986592096256> | **{ctx.author.name}**, o comando **`{ctx.invoked_with}`** está temporariamente desativado.")
         elif isinstance(error, commands.MissingRequiredArgument):
           await ctx.send('faltando argumentos')
 
     @commands.Cog.listener()
     async def on_member_join(self,member):
-      if member.guild.id == 679015306437460008:
-         dev = member.guild.get_role(679026175762235403)
+      if member.guild.id == 758823253825028167:
+         dev = member.guild.get_role(759814435031875586)
          await member.add_roles(dev)
 
     @commands.Cog.listener()
@@ -116,29 +116,29 @@ class events(commands.Cog):
 
   ##########################################################################   
       
-      if message.channel.id == 686234069738061847:
-          await message.add_reaction('✔️')
-          return await message.add_reaction('❌')
+      if message.channel.id == 759814496419708959:
+          await message.add_reaction('<:like:760197986609004584>')
+          return await message.add_reaction('<:unlike:760197986592096256>')
 
 
 ################################################################################
 
 
       if re.search(r'discord(?:app\\?[\s\S]com\\?\/invite|\\?[\s\S]gg|\\?[\s\S]me)\/', message.content) or re.search(r'invite\\?[\s\S]gg\\?\/[\s\S]', message.content) or "privatepage" in message.content.lower() or "naked" in message.content.lower():
-        if str("</Link>") in [r.name for r in message.author.roles if r.name != "@everyone"] or str('👑 </Owner>') in [r.name for r in message.author.roles if r.name != "@everyone"]:
+        if str("</Link>") in [r.name for r in message.author.roles if r.name != "@everyone"] in [r.name for r in message.author.roles if r.name != "@everyone"]:
             print("OK")
         else:
           if not message.author.id in aviso1:
             aviso1.append(message.author.id)
             await message.delete()
-            embed=discord.Embed(description=f"  **|** Olá {message.author.mention}, não é permitido **CONVITES** de outros servidores sem a permissão dos **ADMINISTRADORES** segundo as regras.\nTendo isso em mente irei avisa-lo esse é seu **1° Strike**.\nNo **3° Strike** você será banido.", color=self.bot.cor)
+            embed=discord.Embed(description=f" <:unlike:760197986592096256> **|** Olá {message.author.mention}, não é permitido **CONVITES** de outros servidores sem a permissão dos **ADMINISTRADORES** segundo as regras.\nTendo isso em mente irei avisa-lo esse é seu **1° Strike**.\nNo **3° Strike** você será banido.", color=self.bot.cor)
             msg = await message.channel.send(embed=embed)
             await asyncio.sleep(10)
             await msg.delete()
           elif not message.author.id in aviso2:
             aviso2.append(message.author.id)
             await message.delete()
-            embed=discord.Embed(description=f"  **|** Olá {message.author.mention}, não é permitido **CONVITES** de outros servidores sem a permissão dos **ADMINISTRADORES** segundo as regras.\nTendo isso em mente irei avisa-lo esse é seu **2° Strike**.\nNo **3° Strike** você será banido.", color=self.bot.cor)
+            embed=discord.Embed(description=f" <:unlike:760197986592096256> **|** Olá {message.author.mention}, não é permitido **CONVITES** de outros servidores sem a permissão dos **ADMINISTRADORES** segundo as regras.\nTendo isso em mente irei avisa-lo esse é seu **2° Strike**.\nNo **3° Strike** você será banido.", color=self.bot.cor)
             msg = await message.channel.send(embed=embed)
             await asyncio.sleep(10)
             await msg.delete()
@@ -153,7 +153,7 @@ class events(commands.Cog):
     @commands.Cog.listener()
     async def on_message_delete(self,message):
         if message.author.bot == False:
-          if message.channel.id == 679737085195845637:
+          if message.channel.id == 759814502798721024:
             return
           else:
             embed = discord.Embed(color=self.bot.cor)
